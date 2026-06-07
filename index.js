@@ -17,6 +17,9 @@ app.use(express.json());
 app.use("/user", UserRouter);
 app.use("/", PhotoRouter);
 
+// Serve static images
+app.use("/images", express.static(path.join(__dirname, "images")));
+
 app.get("/", (req, res) => {
   res.send("Backend is running!");
 });
